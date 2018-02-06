@@ -21,6 +21,7 @@
 		1B914F03202206DD002DB512 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B914F02202206DD002DB512 /* Users.swift */; };
 		1B91FB892026CF0700C45836 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B91FB882026CF0700C45836 /* UserCell.swift */; };
 		1B959C99202230BB00DE8048 /* LoginControllerExtensionFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B959C98202230BB00DE8048 /* LoginControllerExtensionFile.swift */; };
+		1BDDAF54202A178D00208110 /* ChatViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDDAF53202A178D00208110 /* ChatViewCell.swift */; };
 		A1B851F8F5F5499128B23C6F /* Pods_Chat_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2599A056D2F286701172456C /* Pods_Chat_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		1B914F0820221E62002DB512 /* Chat AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Chat AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B91FB882026CF0700C45836 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		1B959C98202230BB00DE8048 /* LoginControllerExtensionFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginControllerExtensionFile.swift; sourceTree = "<group>"; };
+		1BDDAF53202A178D00208110 /* ChatViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewCell.swift; sourceTree = "<group>"; };
 		2599A056D2F286701172456C /* Pods_Chat_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chat_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ED82B5FE0B834EC0A20EC81 /* Pods-Chat App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chat App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chat App/Pods-Chat App.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				1B91FB882026CF0700C45836 /* UserCell.swift */,
+				1BDDAF53202A178D00208110 /* ChatViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				1B05EB642020F9A300892D14 /* AppDelegate.swift in Sources */,
 				1B91FB892026CF0700C45836 /* UserCell.swift in Sources */,
 				1B959C99202230BB00DE8048 /* LoginControllerExtensionFile.swift in Sources */,
+				1BDDAF54202A178D00208110 /* ChatViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
