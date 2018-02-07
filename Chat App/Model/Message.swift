@@ -12,12 +12,12 @@ import Firebase
 class Message: NSObject {
     var fromID: String?
     var toID: String?
-    var messages: String?
+    var text: String?
     var timestamp: NSNumber?
     init(dictionary: [String: Any]) {
         self.fromID = dictionary["FromID"] as? String ?? ""
         self.toID = dictionary["ToID"] as? String ?? ""
-        self.messages = dictionary["messages"] as? String ?? ""
+        self.text = dictionary["messages"] as? String ?? ""
         self.timestamp = dictionary["timestamp"] as? NSNumber
     }
     func chatPartnerId() -> String? {

@@ -55,19 +55,24 @@ class MessageController: UITableViewController {
             messageReference.observeSingleEvent(of: .value, with: { (snapshot) in
                 if let dictionary = snapshot.value as? [String: AnyObject] {
                     let message = Message(dictionary: dictionary)
-                    if let toId = message.toID {
+                    if let toId = message.chatPartnerId() {
                         self.messageDictionary[toId] = message
                         self.messages = Array(self.messageDictionary.values)
                         self.messages.sort(by: { (message1, message2) -> Bool in
                             return message1.timestamp?.int32Value > message2.timestamp?.int32Value
                         })
                     }
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                    }
+                    self.timer?.invalidate()
+                    self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.reloadTable), userInfo: nil, repeats: false)
                 }
             }, withCancel: nil)
         }, withCancel: nil)
+    }
+    var timer: Timer?
+    @objc func reloadTable() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return messages.count
@@ -92,6 +97,7 @@ class MessageController: UITableViewController {
                 return
             }
             let user = Users(dictionary: dictionary)
+            user.id = chatPartnerId
             self.showChatController(user)
         }, withCancel: nil)
     }
@@ -150,7 +156,6 @@ class MessageController: UITableViewController {
         nameLabel.rightAnchor.constraint(equalTo: TitleView.rightAnchor).isActive = true
         nameLabel.heightAnchor.constraint(equalTo: TitleView.heightAnchor).isActive = true
         self.navigationItem.titleView = TitleView
-        TitleView.isUserInteractionEnabled = true
 
     }
     @objc func showChatController(_ user: Users) {
